@@ -1,0 +1,22 @@
+<p>qrcode-generator works!</p>
+<div class="container mt-4">
+    <h2>QR Code Generator</h2>
+    <button class="btn btn-primary" (click)="generateQRCode()">Generate QR Code</button>
+  
+    <div *ngIf="qrCodeUrl()" class="mt-3">
+      <h4>Scan this QR Code:</h4>
+      <img [src]="qrCodeUrl()" alt="QR Code">
+    </div>
+  
+    <hr>
+  
+    <h2>Scan Barcode</h2>
+    <input type="text" class="form-control" [(ngModel)]="barcode" placeholder="Enter barcode manually">
+    <button class="btn btn-success mt-2" (click)="scanBarcode()">Scan Barcode</button>
+  
+    <div *ngIf="menuData()" class="mt-3">
+      <h3>Menu Details:</h3>
+      <pre>{{ menuData() | json }}</pre>
+    </div>
+  </div>
+  
